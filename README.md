@@ -10,6 +10,7 @@ Give Cursor a page or a component. The skills answer with custom CSS: tokens, co
 |---|---|---|
 | Analyze | A URL, a screenshot, or an HTML snippet | Tokens, component CSS, and a prompt you can reuse on the next screen |
 | Dark SaaS | A component in the dark system | Raw HTML and CSS on a near-black UI |
+| Light SaaS | A component in the light system | Raw HTML and CSS on a white UI |
 
 ## What it uses
 
@@ -23,7 +24,7 @@ Give Cursor a page or a component. The skills answer with custom CSS: tokens, co
 
 1. Cursor loads the skills in `.cursor/skills/` when this folder is the open workspace.
 2. **Analyze** reads the page and returns three sections: tokens, component styles, and a reusable prompt.
-3. **Dark SaaS** builds the component you named and returns only HTML and CSS.
+3. **Dark SaaS** or **Light SaaS** builds the component you named and returns only HTML and CSS in that system.
 4. Save an analysis as `guides/<page-slug>.md` so a later component can follow that page.
 
 ## Use
@@ -34,6 +35,8 @@ To use the skills in another project, copy these folders into that project's `.c
 
 - `design-system-analyze`
 - `design-system-reusable` (dark SaaS)
+
+Light SaaS is not a skill. Copy its prompt from [`examples/light-saas.md`](examples/light-saas.md) into your request.
 
 To use them in every project on this machine:
 
@@ -61,12 +64,14 @@ Build a pricing card with three tiers in the dark SaaS style.
 ```
 
 ```text
-Build the same pricing card with the prompt in examples/light-saas.md.
+Build a pricing card with three tiers in the light SaaS style.
 ```
+
+Build a pricing card in light SaaS by pasting the prompt from `examples/light-saas.md` above your request.
 
 ## Examples
 
-Both files are a reusable prompt you can copy. Dark is also the skill Cursor loads. Light is the example only.
+Both systems have a copy-paste prompt. Dark SaaS is also a Cursor skill (`design-system-reusable`) that loads automatically. Light SaaS is an example prompt only.
 
 ### Dark SaaS
 
